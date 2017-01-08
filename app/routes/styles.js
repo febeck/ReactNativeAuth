@@ -8,7 +8,8 @@ export default styles = StyleSheet.create({
   },
   buttonWrapper: {
 		backgroundColor:'#D3D3D3',
-    marginBottom: 10
+		marginBottom: 10,
+    width: 300
   },
   container: {
     alignItems: 'center',

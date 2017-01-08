@@ -20,16 +20,16 @@ class Authentication extends Component {
   render() {
     return (
       <View style={styles.container}>
-				<Text style={styles.title}>
+        <Text style={styles.title}>
           Welcome
         </Text>
-				<View style={styles.form}>
+        <View style={styles.form}>
           <TextInput
             editable={true}
             onChangeText={(email) => this.setState({email})}
             placeholder='Email'
             ref='email'
-						returnKeyType='next'
+            returnKeyType='next'
             style={styles.inputText}
             value={this.state.email}
           />
@@ -38,7 +38,7 @@ class Authentication extends Component {
             onChangeText={(password) => this.setState({password})}
             placeholder='Password'
             ref='password'
-						returnKeyType='next'
+            returnKeyType='next'
             secureTextEntry={true}
             style={styles.inputText}
             value={this.state.password}
