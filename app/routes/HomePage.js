@@ -12,6 +12,23 @@ import styles from './styles';
 
 class HomePage extends Component {
 
+  async getProtectedQuote() {
+    var DEMO_TOKEN = await AsyncStorage.getItem('id_token');
+    // TODO: localhost doesn't work. Get the IP address with ifconfig.
+    fetch("http://147.250.223.228:3001/api/protected/random-quote", {
+      method: "GET",
+      headers: {
+        'Authorization': 'Bearer ' + DEMO_TOKEN
+      }
+    })
+    .then((response) => response.text())
+    .then((quote) => {
+      Alert.alert(
+        "Chuck Norris Quote:", quote)
+    })
+    .done();
+  }
+
   async userLogout() {
     try {
       await AsyncStorage.removeItem('id_token');
@@ -28,7 +45,10 @@ class HomePage extends Component {
 				<Text style={styles.title}>
           Home Page
         </Text>
-        <TouchableOpacity style={styles.buttonWrapper}>
+        <TouchableOpacity
+          style={styles.buttonWrapper}
+          onPress={this.getProtectedQuote}
+        >
           <Text style={styles.buttonText}>
             Get Chuck Norris quote!
           </Text>
