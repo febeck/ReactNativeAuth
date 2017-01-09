@@ -19,6 +19,9 @@ export default styles = StyleSheet.create({
   form: {
     width: 300
   },
+  image: {
+    margin: 10
+  },
   inputText: {
     marginBottom: 10,
     padding: 10

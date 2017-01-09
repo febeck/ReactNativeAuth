@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {
   AsyncStorage,
   Alert,
+  Image,
   Text,
   TouchableOpacity,
   View
@@ -42,9 +43,10 @@ class HomePage extends Component {
   render() {
     return (
       <View style={styles.container}>
-				<Text style={styles.title}>
-          Home Page
-        </Text>
+        <Image
+          source={require('../images/chuck_norris.png')}
+          style={styles.image}
+        />
         <TouchableOpacity
           style={styles.buttonWrapper}
           onPress={this.getProtectedQuote}
