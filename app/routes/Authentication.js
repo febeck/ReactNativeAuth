@@ -10,8 +10,6 @@ import {
 import {Actions} from 'react-native-router-flux';
 import styles from './styles';
 
-const STORAGE_KEY = 'id_token';
-
 class Authentication extends Component {
 
   constructor(){
@@ -46,7 +44,7 @@ class Authentication extends Component {
     })
     .then((response) => response.json())
     .then((responseData) => {
-      this.onValueChange(STORAGE_KEY, responseData.id_token),
+      this.onValueChange('id_token', responseData.id_token),
       Alert.alert(
         "Signup Success!",
         "Click the button to get a Chuck Norris quote!"
@@ -73,7 +71,7 @@ class Authentication extends Component {
       })
       .then((response) => response.json())
       .then((responseData) => {
-        this.onValueChange(STORAGE_KEY, responseData.id_token),
+        this.onValueChange('id_token', responseData.id_token),
         Alert.alert(
           "Login Success!",
           "Click the button to get a Chuck Norris quote!"
